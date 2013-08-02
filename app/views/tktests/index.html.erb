@@ -1,0 +1,31 @@
+<h1>Listing tktests</h1>
+
+<table>
+  <tr>
+    <th>Category</th>
+    <th>Topic</th>
+    <th>Noq</th>
+    <th>Pass score</th>
+    <th>Comptime</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @tktests.each do |tktest| %>
+  <tr>
+    <td><%= tktest.category_id %></td>
+    <td><%= tktest.topic_id %></td>
+    <td><%= tktest.noq %></td>
+    <td><%= tktest.pass_score %></td>
+    <td><%= tktest.comptime %></td>
+    <td><%= link_to 'Show', tktest %></td>
+    <td><%= link_to 'Edit', edit_tktest_path(tktest) %></td>
+    <td><%= link_to 'Destroy', tktest, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Tktest', new_tktest_path %>

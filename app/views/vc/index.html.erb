@@ -1,0 +1,27 @@
+<table>
+<% for topic in  @all_tests %>
+<tr>
+<th>Topic Name</th>
+<th>Action </th>
+<th>Quiz</th>
+<th>Pass score</th>
+<th>No of Questions</th>
+</tr>
+<tr>
+
+<td><%= Topic.find(topic.topic_id).name %> </td>
+
+<td>View Content</td>
+
+<td><%= link_to "Take Test", :controller => "dispques", :id => topic.topic_id %> </td>
+
+<td><%= topic.pass_score %></td>
+
+
+<td>
+
+<%= topic.noq %>
+</td>
+<tr>
+<% end %>
+</table>

@@ -1,0 +1,10 @@
+<form action = "result" method = "POST">
+
+<% for ques in @all_questions %>
+   <%= ques.ques %>
+<input type="radio" name="gr" value="0"><%= ques.ans1 %><br>
+<input type="radio" name="gr" value="1"><%= ques.ans2 %><br>
+<% end %>
+<center><%= paginate @all_questions %></center>
+<input type="submit">
+</form>
