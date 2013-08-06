@@ -13,3 +13,26 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+
+
+$(document).ready(function(){
+
+var arr = {};
+$("#re").click(function(){
+  $.post('dispques/restest',{qid:$('#qno').val(), ans:$('input:radio[name=gr]:checked').val()}, function(data) {
+  alert("Your answer is updated, Please click next to proceed");
+});
+
+
+  });
+$("#er").click(function()
+{
+ $.get('dispques/dispres', function(data) {
+   $('testres').append(data);
+
+});
+});
+
+
+});

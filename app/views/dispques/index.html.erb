@@ -1,10 +1,17 @@
-<form action = "result" method = "POST">
+<center><%= paginate @all_questions %></center>
 
 <% for ques in @all_questions %>
    <%= ques.ques %>
-<input type="radio" name="gr" value="0"><%= ques.ans1 %><br>
-<input type="radio" name="gr" value="1"><%= ques.ans2 %><br>
+<input type="radio" name="gr" id="<%= ques.id %>" value="<%= ques.ans1 %>"><%= ques.ans1 %><br>
+<input type="radio" name="gr" id="<%= ques.id %>" value="<%= ques.ans2 %>"><%= ques.ans2 %><br>
+<input type="hidden" name="ques" id = "qno" value="<%= ques.id %>">
+You have answered <% @d = session[ ques.id ] %> <%= @d %>
 <% end %>
-<center><%= paginate @all_questions %></center>
-<input type="submit">
-</form>
+<input type="submit" id = "re">
+<input type="submit" id = "er">
+
+<div id = "testres">
+  
+</div>
+
+
